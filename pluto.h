@@ -1,0 +1,25 @@
+/* This file was automatically generated.  Do not edit! */
+int pluto_receive();
+int pluto_transmit(float complex *buffer,int len,int do_dump_rx,int is_last);
+void pluto_set_rx_freq(long long freq_rx_hz);
+void pluto_set_enable_tx(int enable);
+void pluto_set_tx_freq(long long freq_tx_hz);
+void pluto_set_in_sample_freq(long long sfreq);
+void pluto_set_in_bw(long long chbw);
+void pluto_set_out_bw(long long chbw);
+void pluto_bump_agc_up(int delta);
+void pluto_set_in_gain(long long gain);
+void pluto_bump_agc_down(int delta);
+void disable_rx();
+void enable_rx();
+long long pluto_get_in_rssi(void);
+void pluto_set_in_gain_auto_fast(void);
+long long pluto_get_in_gain(void);
+void pluto_set_out_gain(long long gain);
+void pluto_set_filter();
+void pluto_enable_fir(int enable);
+struct iio_context *pluto_init_txrx();
+extern long long current_sample_freq;
+extern long long current_rx_freq;
+extern long long pluto_current_gain;
+extern int rx_timeout;

@@ -1,0 +1,36 @@
+The Charon project is intended for educational purposes only.  It is the
+end-users responsibility to ensure compliance with local regulations.  If you
+are operating within the US, the the following from FCC part 15 may or may not
+apply.  Please do take the responsibility to make sure that you are employing
+good engineering practices.
+-------------------------------------------------------------------------------
+Section 15.23 Home-Built Transmitters that are Not for Sale
+  Hobbyists, inventors and other parties that design and build Part 15
+  transmitters with no intention of ever marketing them may construct and
+  operate up to five such transmitters for their own personal use without
+  having to obtain FCC equipment authorization. If possible, these transmitters
+  should be tested for compliance with the Commission's rules. If such testing
+  is not practicable, their designers and builders are required to employ good
+  engineering practices in order to ensure compliance with the Part 15 standards.
+
+Section 15.5, 47 U.S.C. 503 Home-built transmitters, like all
+  Part 15 transmitters, are not allowed to cause interference to licensed radio
+  communications and must accept any interference that they receive. If
+  a home-built Part 15 transmitter does cause interference to licensed radio
+  communications, the Commission will require its operator to cease operation
+  until the interference problem is corrected. Furthermore, if the Commission
+  determines that the operator of such a transmitter has not attempted to
+  ensure compliance with the Part 15 technical standards by employing good
+  engineering practices then that operator may be fined up to $10,000 for each
+  violation and $75,000 for a repeat or continuing violation.
+
+Section 15.7, 47 CFR Part 5 Operating a prototype of
+  a product that is ultimately intended for market is not considered "personal
+  use." Thus, a party that designs and builds a transmitter with plans to mass
+  produce and market a future version of it must obtain an experimental license
+  from the FCC in order to operate the transmitter for any purpose other than
+  testing for compliance with the Part 15 technical standards. Information on
+  experimental licenses may be obtained from the contact point listed in the
+  Additional Information section of this bulletin. FCC authorization is not
+  required in order to test a transmitter for compliance with the Part 15
+  technical standards.

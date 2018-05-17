@@ -1,0 +1,20 @@
+/* This file was automatically generated.  Do not edit! */
+void read_config();
+extern long long tx_output_power_minus_dbm;
+extern long long rf_bandwidth;
+extern long long sample_freq_hz;
+extern long long freq_rxtx_hz;
+extern int tcp_share_backoff;
+extern int max_tcp_share_backoff;
+extern int symbol_delay_timeout;
+extern int ack_delay_timeout;
+extern int usb_batman_if;
+extern int max_tcp_segs;
+extern int bcast_retrans;
+extern int max_long_retrans;
+extern int max_short_retrans;
+extern int bat_ogm_interval;
+extern int enable_charon;
+extern double ref_correction_ppm;
+extern char usb_ip[16];
+extern uint32_t usb_ip32;
