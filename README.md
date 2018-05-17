@@ -1,5 +1,5 @@
 <html>
-<b>Enable your Pluto SDR to become stand-alone OFDM transceiver with batman-adv mesh networking capabilities</b>
+<b>Enable your Pluto SDR to become a stand-alone OFDM transceiver with batman-adv mesh networking capabilities</b>
 <BR>
 <BR><B>Charon</B>  (Charon is named after one of the planet pluto's 5 known moons).
 <BR>
