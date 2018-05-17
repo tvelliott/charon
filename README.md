@@ -76,10 +76,10 @@ need to measure the frequency error of your device to get this setting right.
 (probably within +/- 1 Khz, preferably better)  If you don't have a spectrum
 analyzer, then you can try adjusting the freq_offset_ppm by +/- 0.5 until it
 starts working.  The ppm frequecy offset,ipaddr (set via config.txt in
-Analog Devices documentation), and max_cpus are really all you need to set
+Analog Devices documentation), and maxcpus are really all you need to set
 manuallly to get a network up and running.  The ipaddr is used to generate
 a unique MAC address for the wireless interface, so no need to manually set
-that either.  The max_cpus requirement allows charon to run on a separate cpu core 
+that either.  The maxcpus requirement allows charon to run on a separate cpu core 
 from the rest of the system.  This keeps samples from getting dropped.
 <BR>
 The config script in /root/ contains the following
