@@ -10,23 +10,24 @@ Enable your Pluto SDR to become stand-alone OFDM transceiver with batman-adv mes
 The Charon project aims to enable those who own 2 or more Pluto SDR devices to
 experiment with narrow-band OFDM channels and mesh networking. In the current
 state, it supports OFDM with 64 sub-carriers, 16-QAM, and a data rate of
-272-Kbps (after FEC coding rate) in an occupied bandwidth of 140KHz. Due to the
-use of the batman-adv protocol, there are no limitations on what higher-layer
-traffic it supports.  The mesh routing is accomplished at layer 2 (MAC
-addressing).  Every wireless layer-2 transmission that is not broadcast is
-acknowledged with user-configurable options for short and long transmissions
-(<128 bytes is considered short).  Broadcast may be configured for 0 or more
-transmissions (without ack). Host systems (computers attached to the Pluto
-device) are not required to be batman-adv enabled to communicate with other
-hosts or Pluto-devices on the network.  Up to 4 Pluto devices have been tested
-with 3 host machines (one stand-alone pluto with no host). Even with batman OGM
-broadcasts being broadcast on 4 devices, the TCP throughput is good down to
--100 dBm or less at around a peak of 117 Kbps (no repeater hops).
+272-Kbps (after FEC coding rate) in an occupied bandwidth of 140KHz.  I believe
+this is the first open-source example of such a system working on real
+hardware. Due to the use of the batman-adv protocol, there are no limitations
+on what higher-layer traffic it supports. The mesh routing is accomplished at
+layer 2 (MAC addressing). Every wireless layer-2 transmission that is not
+broadcast is acknowledged with user-configurable options for short and long
+transmissions (<128 bytes is considered short).  Broadcast may be configured
+for 0 or more transmissions (without ack). Host systems (computers attached to
+the Pluto device) are not required to be batman-adv enabled to communicate
+with other hosts or Pluto-devices on the network.  Up to 4 Pluto devices have
+been tested with 3 host machines (one stand-alone pluto with no host). Even
+with batman OGM broadcasts being broadcast on 4 devices, the TCP throughput is
+good down to -100 dBm or less at around a peak of 117 Kbps (no repeater hops).
 A single repeater (if batman-adv decides to route that way), reduces the TCP
-throughput to around 80 Kbps.  More hops will further reduce the TCP throughput
-and latency of other protocols.  The Charon daemon may be disabled via
+throughput to around 80 Kbps. More hops will further reduce the TCP throughput
+and latency of other protocols. The Charon daemon may be disabled via
 a user-configurable u-boot environment variable (via fw_setenv) if normal Pluto
-SDR functionality is desired  (e.g.  using GQRX, GNU-Radio, etc).
+SDR functionality is desired (e.g. using GQRX, GNU-Radio, etc).
 </p>
 <BR>
 <B>Plot of 3rd radio monitoring the on-air spectrum and constellation of 2 transceivers communicating via OFDM-64, QAM-16</B>
