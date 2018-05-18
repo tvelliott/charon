@@ -240,7 +240,6 @@ up to QAM-256 with much higher-order FEC was tested.
 <B>Notes On Troubleshooting</B>
 <BR>
 <BR>
-<p>
 Make sure the frequencies of all nodes are the same.  Because the transmit and
 receive are derived from the same reference, you can just monitor the transmit
 output of each device and adjust for that observed error.  Note that the
@@ -275,6 +274,5 @@ on startup, but just pointing out that the mesh-bridge: interface gets the ip as
 while running the mesh network.  The mesh-bridge will still configure the host system
 over the usb interface (as configured in config.txt) like the default pluto firmware.
 <BR>
-</p>
 
 </html>
