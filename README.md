@@ -227,7 +227,7 @@ through the network.  This should enable better sharing of the limited bandwidth
 sessions.
 <BR>
 <BR>
-Still need to fork the Analog Devices pluto firmware repo and add all the configuration changes / scripts related to Charon
+Still need to document the configuration changes to Analog Devices pluto firmware repo and add build instructions. 
 <BR>
 <BR>
 Need to figure out how to optimize for higher data-rates.  
