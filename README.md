@@ -206,12 +206,6 @@ libfftw3  http://www.fftw.org/
 <B>Future Developement</B>
 <BR>
 <BR>
-First order of business should be to figure out how to optimize for higher data-rates.  
-Currently QAM-64 works stand-alone, but due to optimization issues (samples getting dropped),
-does not result in higher data throughput than QAM-16.  When doing loopback testing on a PC,
-up to QAM-256 with much higher-order FEC was tested.
-<BR>
-<BR>
 Add option for AES encryption.  In addition to wireless security, this will provide a means of partitioning receiver domains.
 <BR>
 <BR>
@@ -221,5 +215,20 @@ sessions.
 <BR>
 <BR>
 Still need to fork the Analog Devices pluto firmware repo and add all the configuration changes / scripts related to Charon
+<BR>
+<BR>
+Need to figure out how to optimize for higher data-rates.  
+Currently QAM-64 works stand-alone, but due to optimization issues (samples getting dropped),
+does not result in higher data throughput than QAM-16.  When doing loopback testing on a PC,
+up to QAM-256 with much higher-order FEC was tested.
+<BR>
+<BR>
+<B>For fun....</B>
+<BR>
+<B>Plot of a 64-symbol constellation I decided to name PI modulation  (utilizes arbitrary mapping available in liquid-dsp) 
+<img src="https://github.com/tvelliott/charon/blob/master/images/pi_modulation_small.gif">
+<BR>
+<BR>
+With a low distortion signal and enough SNR, it performs the same as QAM-64 for data rate.
 
 </html>
