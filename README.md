@@ -225,10 +225,12 @@ up to QAM-256 with much higher-order FEC was tested.
 <BR>
 <B>For fun....</B>
 <BR>
+<BR>
 <B>Plot of a 64-symbol constellation I decided to name PI modulation  (utilizes arbitrary mapping available in liquid-dsp) 
+<BR>
 <img src="https://github.com/tvelliott/charon/blob/master/images/pi_modulation_small.gif">
 <BR>
 <BR>
-With a low distortion signal and enough SNR, it performs the same as QAM-64 for data rate.
+<p>With a low distortion signal and enough SNR, it performs the same as QAM-64 for data rate.</p>
 
 </html>
