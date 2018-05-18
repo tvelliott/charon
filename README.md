@@ -201,6 +201,9 @@ https://www.open-mesh.org/projects/open-mesh/wiki
 <BR>
 libfftw3  http://www.fftw.org/
 <BR>
+<BR>
+If you use this project in relationship to your research, I would appreciate a mention of this project / github repository in your paper.
+<BR>
 </p>
 <BR>
 <B>Future Developement</B>
