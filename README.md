@@ -227,9 +227,6 @@ through the network.  This should enable better sharing of the limited bandwidth
 sessions.
 <BR>
 <BR>
-Still need to document the configuration changes to Analog Devices pluto firmware repo and add build instructions. 
-<BR>
-<BR>
 Need to figure out how to optimize for higher data-rates.  
 Currently QAM-64 works stand-alone, but due to optimization issues (samples getting dropped),
 does not result in higher data throughput than QAM-16.  When doing loopback testing on a PC,
