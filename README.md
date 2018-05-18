@@ -343,6 +343,8 @@ At this point, you can login to the device and run the script found in /root to 
 <BR>
 <BR>
 Sorry, the build procedure is kind of a hack I know (more of a hw guy) , but hopefully that should get you up and experimenting with it. 
-
+<BR>
+<BR>
+If you make some changes and get a reliable increase in throughput or other enhancements, please feel free to send a pull request.
 
 </html>
