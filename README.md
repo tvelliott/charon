@@ -209,7 +209,8 @@ https://www.open-mesh.org/projects/open-mesh/wiki
 libfftw3  http://www.fftw.org/
 <BR>
 <BR>
-If you use this project in relationship to your research, I would appreciate a mention of this project / github repository in your paper.
+libtuntap - forked and cross-compiled with .a library output ready to be linked against charon
+<BR>
 <BR>
 </p>
 <BR>
