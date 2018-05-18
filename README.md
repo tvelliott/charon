@@ -278,5 +278,10 @@ on startup, but just pointing out that the mesh-bridge: interface gets the ip as
 while running the mesh network.  The mesh-bridge will still configure the host system
 over the usb interface (as configured in config.txt) like the default pluto firmware.
 <BR>
+<BR>
+<B>Setting up a build environment</B>
+<BR>
+<BR>
+Working on it...To be continued.
 
 </html>
