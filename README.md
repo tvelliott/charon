@@ -69,19 +69,23 @@ NOTE: the maxcpus environment variable must be set to enable the second cpu core
 <BR>
 <p>
 As mentioned already, the default u-boot variables for charon may be set with
-the included script in root.  #root>sh set_charon_env.sh.  NOTE: This will
-reset all defaults including the freq error in ppm.  Please delete the line for
-freq_offset_ppm if you already set this based on measurements.  The frequency
-for narrow-band OFDM does need to be somewhat accurate.  You will most likely
-need to measure the frequency error of your device to get this setting right.
-(probably within +/- 1 Khz, preferably better)  If you don't have a spectrum
-analyzer, then you can try adjusting the freq_offset_ppm by +/- 0.5 until it
-starts working.  The ppm frequecy offset,ipaddr (set via config.txt in
-Analog Devices documentation), and maxcpus are really all you need to set
-manuallly to get a network up and running.  The ipaddr is used to generate
-a unique MAC address for the wireless interface, so no need to manually set
-that either.  The maxcpus requirement allows charon to run on a separate cpu core 
-from the rest of the system.  This keeps samples from getting dropped.
+the included script in root.  
+<BR>
+#root> sh set_charon_env.sh.  
+<BR>
+This will reset all defaults including the freq error in ppm.  Please delete
+the line for freq_offset_ppm if you already set this based on measurements.
+The frequency for narrow-band OFDM does need to be somewhat accurate.  You will
+most likely need to measure the frequency error of your device to get this
+setting right. (probably within +/- 1 Khz, preferably better)  If you don't
+have a spectrum analyzer, then you can try adjusting the freq_offset_ppm by +/-
+0.5 until it starts working. The ppm frequecy offset,ipaddr (set via
+config.txt in Analog Devices documentation), and maxcpus are really all you
+need to set manuallly to get a network up and running. The ipaddr is used to
+generate a unique MAC address for the wireless interface, so no need to
+manually set that either. The maxcpus requirement allows charon to run on
+a separate cpu core from the rest of the system. This keeps samples from
+getting dropped.
 <BR>
 The config script in /root/ contains the following
 <BR>
