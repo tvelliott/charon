@@ -14,17 +14,18 @@ on what higher-layer traffic it supports. The mesh routing is accomplished at
 layer 2 (MAC addressing). Every wireless layer-2 transmission that is not
 broadcast is acknowledged with user-configurable options for short and long
 transmissions (<128 bytes is considered short).  Broadcast may be configured
-for 0 or more transmissions (without ack). Host systems (computers attached to
-the Pluto device) are not required to be batman-adv enabled to communicate
-with other hosts or Pluto-devices on the network.  Up to 4 Pluto devices have
-been tested with 3 host machines (one stand-alone pluto with no host). Even
-with batman OGM broadcasts being broadcast on 4 devices, the TCP throughput is
-good down to -100 dBm or less at around a peak of 117 Kbps (no repeater hops).
-A single repeater (if batman-adv decides to route that way), reduces the TCP
-throughput to around 80 Kbps. More hops will further reduce the TCP throughput
-and latency of other protocols. The Charon daemon may be disabled via
-a user-configurable u-boot environment variable (via fw_setenv) if normal Pluto
-SDR functionality is desired (e.g. using GQRX, GNU-Radio, etc).
+for 0 or more re-transmissions (1 or more tx without ack). Host systems
+(computers attached to the Pluto device) are not required to be batman-adv
+enabled to communicate with other hosts or Pluto-devices on the network.  Up to
+4 Pluto devices have been tested with 3 host machines (one stand-alone pluto
+with no host). Even with batman OGM broadcasts being broadcast on 4 devices,
+the TCP throughput is good down to -100 dBm or less at around a peak of 117
+Kbps (no repeater hops).  A single repeater (if batman-adv decides to route
+that way), reduces the TCP throughput to around 80 Kbps. More hops will
+further reduce the TCP throughput and latency of other protocols. The Charon
+daemon may be disabled via a user-configurable u-boot environment variable (via
+fw_setenv) if normal Pluto SDR functionality is desired (e.g. using GQRX,
+GNU-Radio, etc).
 </p>
 <BR>
 <B>Plot of 3rd radio monitoring the on-air spectrum and constellation of 2 transceivers communicating via OFDM-64, QAM-16</B>
@@ -45,6 +46,8 @@ image.
 The following DEFAULTS are used if not set manually with fw_setenv  (viewed
 with fw_printenv).  A script is provided in the /root directory for setting
 the defaults via fw_setenv.  See config.c for more insight on this.
+<BR>
+NOTE: the maxcpus environment variable must be set to enable the second cpu core.
 </p>
 <pre>
 #define DEFAULT_ENABLE_CHARON 1   //set to zero if you don't want the charon daemon to start and use libiio resources
@@ -111,8 +114,9 @@ After installing Charon on all nodes and setting the individual IP adresses for
 the device and host, you may want to see some output about what is going on.
 To enable viewing of packet recepton transmission, signal level, quality,
 etc, login to the device  
-<BR>username: root,  password: 
-<BR>analog and restart the charon daemon:   <B>/etc/init.d/S100-start_charon restart  </B>
+<BR>username: root
+<BR>password: analog 
+<BR>and restart the charon daemon:   <B>/etc/init.d/S100-start_charon restart  </B>
 <BR>After that, you should start to see batman-adv OGM broadcasts being transmitted 
 and received:
 
@@ -137,7 +141,8 @@ TAPDEV_IN -> RF_OUT , len=54
 </pre>
 <BR>
 Now try pinging one of the remotes.  It may take a few seconds (or more) before ARP request/reply happens in both directions. With
-the default Charon settings,  batman-adv OGM packets are only broadcast every 10 seconds to keep bandwidth usage to minimum. 
+the default Charon settings,  batman-adv OGM packets are only broadcast every 10 seconds to keep bandwidth usage to minimum. The 
+packet error rate remains very low down to less than -100 dBm. 
 <BR>
 The Pluto devices have been configured to run an iperf3 server.  You can
 measure up/down TCP bandwidth with the following (assuming you have installed
@@ -172,8 +177,6 @@ iperf3 on your end-device host or you are running iperf3 from a prompt on a plut
 <BR>
 <B>Credits</B>
 <p>
-So much credit due everywhere.  In no particular order:
-<BR>
 <BR>
 GNU and Linux
 <BR>
@@ -196,9 +199,6 @@ https://www.kernel.org/doc/html/v4.15/networking/batman-adv.html
 https://www.open-mesh.org/projects/open-mesh/wiki
 <BR>
 <BR>
-Another valuable DSP book resource is, of course:  Richard Lyons:  Understanding Digital Signal Processing
-<BR>
-<BR>
 libfftw3  http://www.fftw.org/
 <BR>
 </p>
@@ -206,11 +206,13 @@ libfftw3  http://www.fftw.org/
 <B>Future Developement</B>
 <BR>
 <BR>
-First order of business should be to figure out how to optimize for higher
-data-rates.  
+First order of business should be to figure out how to optimize for higher data-rates.  
+Currently QAM-64 works stand-alone, but due to optimization issues (samples getting dropped),
+does not result in higher data throughput than QAM-16.  When doing loopback testing on a PC,
+up to QAM-256 with much higher-order FEC was tested.
 <BR>
 <BR>
-AES encryption
+Add option for AES encryption.  In addition to wireless security, this will provide a means of partitioning receiver domains.
 <BR>
 <BR>
 Dynamic scaling of TCP Window size in tcp_subs.c  This will require keeping track of TCP session passing
