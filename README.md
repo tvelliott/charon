@@ -229,7 +229,7 @@ up to QAM-256 with much higher-order FEC was tested.
 <B>For fun....</B>
 <BR>
 <BR>
-<B>Plot of a 64-symbol constellation I decided to call Pi modulation  (utilizes arbitrary mapping available in liquid-dsp) 
+<B>Plot of a 64-symbol constellation I decided to call Pi modulation  (utilizes arbitrary mapping available in liquid-dsp)</B>
 <BR>
 <img src="https://github.com/tvelliott/charon/blob/master/images/pi_modulation_small.gif">
 <BR>
