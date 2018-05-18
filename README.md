@@ -18,14 +18,14 @@ for 0 or more re-transmissions (1 or more tx without ack). Host systems
 (computers attached to the Pluto device) are not required to be batman-adv
 enabled to communicate with other hosts or Pluto-devices on the network.  Up to
 4 Pluto devices have been tested with 3 host machines (one stand-alone pluto
-with no host). Even with batman OGM broadcasts being broadcast on 4 devices,
-the TCP throughput is good down to -100 dBm or less at around a peak of 117
-Kbps (no repeater hops).  A single repeater (if batman-adv decides to route
+with no host). With batman OGM broadcasts being broadcast on the 4 pluto devices,
+the TCP throughput was good down to -100 dBm or less at around a peak of 117
+Kbps (no repeater hops).  A single repeater hop (if batman-adv decides to route
 that way), reduces the TCP throughput to around 80 Kbps. More hops will
 further reduce the TCP throughput and latency of other protocols. The Charon
-daemon may be disabled via a user-configurable u-boot environment variable (via
-fw_setenv) if normal Pluto SDR functionality is desired (e.g. using GQRX,
-GNU-Radio, etc).
+daemon may be disabled from starting on power-up via a user-configurable 
+u-boot environment variable (via fw_setenv enable_charon) if normal Pluto SDR 
+functionality is desired (e.g. using GQRX, GNU-Radio, etc).
 </p>
 <BR>
 <B>Plot of 3rd radio monitoring the on-air spectrum and constellation of 2 transceivers communicating via OFDM-64, QAM-16</B>
