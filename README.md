@@ -76,10 +76,11 @@ the included script in root.
 This will reset all defaults including the freq error in ppm.  Please delete
 the line for freq_offset_ppm if you already set this based on measurements.
 The frequency for narrow-band OFDM does need to be somewhat accurate.  You will
-most likely need to measure the frequency error of your device to get this
-setting right. (probably within +/- 1 Khz, preferably better)  If you don't
-have a spectrum analyzer, then you can try adjusting the freq_offset_ppm by +/-
-0.5 until it starts working. The ppm frequecy offset,ipaddr (set via
+most likely need to measure the relative frequency error of your devices to get
+this setting right.  If you don't have a spectrum analyzer, then you can try
+adjusting the freq_offset_ppm by +/- 0.5 until it starts working... or better
+yet use one of your plutos as a spectrum analyzer to measure the relative
+frequency error of your other devices. The ppm frequecy offset,ipaddr (set via
 config.txt in Analog Devices documentation), and maxcpus are really all you
 need to set manuallly to get a network up and running. The ipaddr is used to
 generate a unique MAC address for the wireless interface, so no need to
