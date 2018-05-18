@@ -80,13 +80,12 @@ most likely need to measure the relative frequency error of your devices to get
 this setting right.  If you don't have a spectrum analyzer, then you can try
 adjusting the freq_offset_ppm by +/- 0.5 until it starts working... or better
 yet use one of your plutos as a spectrum analyzer to measure the relative
-frequency error of your other devices. The ppm frequecy offset,ipaddr (set via
-config.txt in Analog Devices documentation), and maxcpus are really all you
-need to set manuallly to get a network up and running. The ipaddr is used to
-generate a unique MAC address for the wireless interface, so no need to
-manually set that either. The maxcpus requirement allows charon to run on
-a separate cpu core from the rest of the system. This keeps samples from
-getting dropped.
+frequency error of your other devices. The ppm frequency offset,  ip address,
+and maxcpus are really all you need to set manuallly to get a network up and
+running. The pluto ip address is used to generate a unique MAC address for the 
+wireless interface, so no need to manually set that either. The maxcpus requirement
+allows charon to run on a separate cpu core from the rest of the system. This
+keeps samples from getting dropped.
 <BR>
 The config script in /root/ contains the following
 <BR>
@@ -117,7 +116,7 @@ fw_setenv tx_output_power_minus_dbm 10
 <p>
 After installing Charon on all nodes and setting the individual IP adresses for
 the device and host, you may want to see some output about what is going on.
-To enable viewing of packet recepton transmission, signal level, quality,
+To enable viewing of packet reception, transmission, signal level, quality,
 etc, login to the device  
 <BR>username: root
 <BR>password: analog 
@@ -145,8 +144,11 @@ RF_IN->TAPDEV_OUT_, len=54, rssi: -89.3 dBm, rx EVM -25.0 dB, in-gain: 65 dB, d-
 TAPDEV_IN -> RF_OUT , len=54
 </pre>
 <BR>
-Now try pinging one of the remotes.  It may take a few seconds (or more) before ARP request/reply happens in both directions. With
-the default Charon settings,  batman-adv OGM packets are only broadcast every 10 seconds to keep bandwidth usage to minimum. The 
+Now try pinging one of the remotes.  It may take a few seconds (or more) before
+ARP and OGM tables are able to resolve. Once packets starting getting
+through, this delay is not incurred until a long period inactivity has passed.
+(table entries expire). With the default Charon settings,  batman-adv OGM packets are
+broadcast every 10 seconds to keep bandwidth usage to minimum. The
 packet error rate remains very low down to less than -100 dBm. 
 <BR>
 The Pluto devices have been configured to run an iperf3 server.  You can
