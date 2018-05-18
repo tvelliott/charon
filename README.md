@@ -284,6 +284,65 @@ over the usb interface (as configured in config.txt) like the default pluto firm
 <B>Setting up a build environment</B>
 <BR>
 <BR>
-Working on it...To be continued.
+Go to analog devices plutosdr-fw github page and follow the instructions for building  https://github.com/analogdevicesinc/plutosdr-fw
+<BR>
+<BR>
+You may want to make a backup of your fresh/default plutosdr-fw build at this point.
+<BR>
+<BR>
+<pre>
+cd plutosdr-fw
+export CROSS_COMPILE=arm-xilinx-linux-gnueabi-
+export PATH=$PATH:/opt/Xilinx/SDK/2016.2/gnu/arm/lin/bin
+export VIVADO_SETTINGS=/opt/Xilinx/Vivado/2016.4/settings64.sh
+
+git clone https://github.com/tvelliott/charon.git
+cp -fr charon/changes_to_plutosdr_fw_configs_rel_to_v28/* .
+
+cd buildroot
+make batctl
+make bridge-utils
+rm -fr output/build/fftw-3.3.7/
+make fftw
+make iperf3
+make iproute2
+make liquid-dsp
+make tunctl
+make util-linux
+cd ..
+
+cd charon
+mkdir third_party
+cd third_party
+git clone https://github.com/tvelliott/libtuntap.git
+git clone https://github.com/tvelliott/libfec.git
+cd ..
+make clean
+make
+cp third_party/libfec/*.so ../buildroot/output/target/usr/lib
+cp charon ../buildroot/output/target/usr/bin
+cd ..
+make
+</pre>
+<BR>
+<BR>
+You may need to edit the charon Makefile to point to the correct location/version for the Xilinx SDK.
+At this point your pluto.frm (with charon) should be in the plutosdr-fw/build directory should be ready 
+to install.
+<BR>
+<BR>
+Once you get the charon executable to compile, then I have been just copying the charon executable 
+to ../buildroot/output/target/usr/bin and re-building the plutosdr-fw image. (as shown in previous steps)
+<BR>
+Note that there are some other files that are also copied to the buildroot/output from the 
+"cp -fr charon/changes_to_plutosdr_fw_configs_rel_to_v28 ." step.  These probably get wiped out
+if you do a clean. In that case, you may need to re-copy them before building the pluto firmware image.
+<BR>
+<BR>
+At this point, you can login to the device and run the script found in /root to set the default env configuration  (maxcpus is required)
+<BR>
+<BR>
+Sorry, the build procedure is kind of a hack I know (more of a hw guy) , but hopefully that should get you up and experimenting with it. 
+
 
 </html>
