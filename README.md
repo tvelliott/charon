@@ -212,6 +212,8 @@ libfftw3  http://www.fftw.org/
 libtuntap - forked and cross-compiled with .a library output ready to be linked against charon
 <BR>
 <BR>
+libfec - default charon config does not use, but liquid-dsp and charon link against libfec. You can experiment with these convolutional FECs by changing ofdm_conf.h 
+<BR>
 </p>
 <BR>
 <B>Future Developement</B>
