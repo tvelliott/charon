@@ -249,8 +249,8 @@ the ppm correction set to zero and just adjust the tx/rx frequency for each
 node "fw_setenv freq_rxtx_hz 915000000".
 <BR>
 <BR>
-While testing, I found that making the tx vertical (relative to the enclosure)
-and the rx horizontal did improve link quality.
+While testing, I found that making the tx antenna vertical (relative to the enclosure)
+and the rx antenna horizontal did improve link quality.
 <BR>
 <BR>
 The AGC code took a while to get working well.  The AGC is adjusted with
