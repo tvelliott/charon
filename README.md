@@ -237,7 +237,7 @@ up to QAM-256 with much higher-order FEC was tested.
 <B>Notes On Troubleshooting</B>
 <BR>
 <BR>
-<pre>
+<p>
 Make sure the frequencies of all nodes are the same.  Because the transmit and
 receive are derived from the same reference, you can just monitor the transmit
 output of each device and adjust for that observed error.  Note that the
@@ -245,20 +245,28 @@ setting for ppm set via "fw_setenv ref_correction_ppm 5.0" must be positive due
 to an issue with setting negative values with fw_setenv.  You could just leave
 the ppm correction set to zero and just adjust the tx/rx frequency for each
 node "fw_setenv freq_rxtx_hz 915000000".
-
+</p>
+<BR>
+<p>
 While testing, I found that making the tx vertical (relative to the enclosure)
 and the rx horizontal did improve link quality.
-
+</p>
+<BR>
+<p>
 The AGC code took a while to get working well.  The AGC is adjusted with
 a slow and fast timer to try and reduce EVM to around -20 dB or better.  It
 starts off with the fast-attack and switches to manual.  This allows distant
 and near nodes to communicate without issues.  In the current state,  the units
 can be distant or right on top of each other, but if you do have issues try
 separating them by at least a few feet to see if that helps.
-
+</p>
+<BR>
+<p>
 Make sure the "fw_setenv maxcpus" environment variable is set.  The charon
 executable needs to run on a separate cpu core.
-
+</p>
+<BR>
+<p>
 The ip-address of the wireless interface is configured by charon.  While charon
 is running, you will see several network interfaces:   ofdm0: bat0: mesh-bridge: usb0: 
 On a default pluto system, the ip-address is assigned to the usb0: interface.  Charon
@@ -267,7 +275,7 @@ ip address of the usb0: device, just the bridge.  Again, this is configured by c
 on startup, but just pointing out that the mesh-bridge: interface gets the ip assigned
 while running the mesh network.  The mesh-bridge will still configure the host system
 over the usb interface (as configured in config.txt) like the default pluto firmware.
-
-</pre>
+</p>
+<BR>
 
 </html>
