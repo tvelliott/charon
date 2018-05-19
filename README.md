@@ -232,6 +232,10 @@ Currently QAM-64 works stand-alone, but due to optimization issues (samples gett
 does not result in higher data throughput than QAM-16.  When doing loopback testing on a PC,
 up to QAM-256 with much higher-order FEC was tested.
 <BR>
+After speaking with someone from Analog Devices, I became aware of a hardware decimation/interpolation
+implementation on the FPGA (up to 8x) in addition to the fir filter decimation / interpolation.  This
+should also free up additional cpu cycles in getting the data rate up.
+<BR>
 <BR>
 <B>For fun....</B>
 <BR>
@@ -262,6 +266,12 @@ starts off with the fast-attack and switches to manual.  This allows distant
 and near nodes to communicate without issues.  In the current state,  the units
 can be distant or right on top of each other, but if you do have issues try
 separating them by at least a few feet to see if that helps.
+<BR>
+Regarding AGC:  After speaking with someone from Analog Devices, it sounds
+like a better approach for the AGC would be to use a custom AGC setup to 
+handle the specific waveforms being utilized.  The Pluto AGC is quite complex
+(in a good way).  Once this gets sorted out, that should free up some more
+cpu cycles for getting other things down.
 <BR>
 <BR>
 Make sure the "fw_setenv maxcpus" environment variable is set.  The charon
