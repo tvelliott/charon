@@ -271,7 +271,7 @@ Regarding AGC:  After speaking with someone from Analog Devices, it sounds
 like a better approach for the AGC would be to use a custom AGC setup to 
 handle the specific waveforms being utilized.  The Pluto AGC is quite complex
 (in a good way).  Once this gets sorted out, that should free up some more
-cpu cycles for getting other things down.
+cpu cycles for getting other things done.
 <BR>
 <BR>
 Make sure the "fw_setenv maxcpus" environment variable is set.  The charon
