@@ -305,6 +305,7 @@ make iperf3
 make iproute2
 make liquid-dsp
 make tunctl
+rm -fr output/build/util-linux-2.31.1/
 make util-linux
 cd ..
 

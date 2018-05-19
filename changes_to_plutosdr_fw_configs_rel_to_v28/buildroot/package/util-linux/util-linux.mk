@@ -4,6 +4,7 @@
 #
 ################################################################################
 
+BR2_PACKAGE_UTIL_LINUX_SCHEDUTILS = 1
 UTIL_LINUX_VERSION_MAJOR = 2.31
 UTIL_LINUX_VERSION_MINOR = 1
 UTIL_LINUX_VERSION = $(UTIL_LINUX_VERSION_MAJOR).$(UTIL_LINUX_VERSION_MINOR)
@@ -29,6 +30,7 @@ UTIL_LINUX_LIBS = $(TARGET_NLS_LIBS)
 # (which needs systemd to be installed)
 UTIL_LINUX_CONF_OPTS += \
 	--without-systemd \
+	--enable-schedutils \
 	--with-systemdsystemunitdir=no
 
 HOST_UTIL_LINUX_DEPENDENCIES = host-pkgconf
@@ -166,6 +168,7 @@ HOST_UTIL_LINUX_CONF_OPTS += \
 	--enable-libblkid \
 	--enable-libmount \
 	--enable-libuuid \
+	--enable-schedutils \
 	--without-ncurses \
 	--without-ncursesw \
 	--without-tinfo
