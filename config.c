@@ -86,7 +86,7 @@ void read_config() {
 
   memset(cmd_str, 0x00, sizeof(cmd_str));
   if( read_fw_attr_value("enable_charon", cmd_str, 128) == 0) {  
-    enable_charon = (long long) atoll(cmd_str);
+    enable_charon = atoi(cmd_str);
     fprintf(stderr, "\nsetting enable_charon to %d", enable_charon);
   }
   else {
