@@ -156,7 +156,7 @@ is_ack=0;
 is_accept=0;
 
   if(data_rate_kbps==0) {
-    data_rate_kbps = (((sample_freq_hz / DECIMATE_INTERPOLATE_FACTOR)/(OFDM_M+CP_LEN+TAPER_LEN)) * (46*_stats.mod_bps)) /1e3; //46 assumes 64-subcarriers with 46 being data
+    data_rate_kbps = (((sample_freq_hz/8 / DECIMATE_INTERPOLATE_FACTOR)/(OFDM_M+CP_LEN+TAPER_LEN)) * (46*_stats.mod_bps)) /1e3; //46 assumes 64-subcarriers with 46 being data
     data_rate_kbps *= ( (8.0/12.0) * (64.0/72.0) );   //adjust for FEC coding rate
                                                       //HAMMING (8/12), SECDED (64/72)
   }
@@ -271,7 +271,7 @@ is_accept=0;
     reset_agc_timer(); 
 
     //ths seems to be working well
-    if( _stats.evm > -20 ) {
+    if( _stats.evm > -28 ) {
       if(_stats.rssi > -20 && rx_gain > 12) {
         pluto_bump_agc_down(-(_stats.rssi+25)/3);
       }
