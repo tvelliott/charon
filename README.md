@@ -77,7 +77,7 @@ the line for freq_offset_ppm if you already set this based on measurements.
 The frequency for narrow-band OFDM does need to be somewhat accurate.  You will
 most likely need to measure the relative frequency error of your devices to get
 this setting right.  If you don't have a spectrum analyzer, then you can try
-adjusting the freq_offset_ppm by +/- 0.1 until it starts working... or better
+adjusting the freq_offset_ppm by +/- 0.5 until it starts working... or better
 yet use one of your plutos as a spectrum analyzer to measure the relative
 frequency error of your other devices. The ppm frequency offset,  ip address,
 and maxcpus are really all you need to set manuallly to get a network up and
