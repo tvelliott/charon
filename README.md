@@ -232,11 +232,6 @@ does not result in higher data throughput than QAM-16.  When doing loopback test
 up to QAM-256 with much higher-order FEC was tested.
 <BR>
 <BR>
-After speaking with someone from Analog Devices, I became aware of a hardware decimation/interpolation
-implementation on the FPGA (up to 8x) in addition to the fir filter decimation / interpolation.  This
-should also free up additional cpu cycles in getting the data rate up. (not done yet)
-<BR>
-<BR>
 <B>For fun....</B>
 <BR>
 <BR>
