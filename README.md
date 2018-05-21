@@ -61,7 +61,7 @@ NOTE: the maxcpus environment variable must be set to enable the second cpu core
 #define DEFAULT_SYMBOL_DELAY ((OFDM_M+CP_LEN+TAPER_LEN)*(DECIMATE_INTERPOLATE_FACTOR/4))  //the time in micro-seconds that the transmit will wait after packet reception before transmitting (in addition to wait for ack) 
 #define DEFAULT_MAX_TCP_SHARE_BACKOFF (DEFAULT_SYMBOL_DELAY*12); //not used currently.  better option will be to monitor tcp sessions and dynamically adjust tcp window size to allow better TCP sharing of bandwidth
 #define DEFAULT_TXRX_FREQ_HZ 915000000  //frequency for the current binary in Hz.  Currently this is limited to operating in the 902-928 Mhz and 2412-2462 Mhz bands.
-#define DEFAULT_SAMPLE_FREQ_HZ 1400000  //sample rate given to pluto with default of the LTE 1.4 MHz filter / decimation of 4x.  Charon decimates/interpolates this by another factor of 8x
+#define DEFAULT_SAMPLE_FREQ_HZ 11200000  //sample rate is fixed fow now. Uses LTE20 MHz filter and decimates to rate of 1400000 Hz, further software decimated by 8x with floating point kaiser filter for occupied bandwidth of 140 KHz
 #define DEFAULT_RF_BANDWIDTH_HZ 250000  //minimum rf bandwidth of the TIA filter on the Pluto  (if I understand correctly)
 #define DEFAULT_TX_OUTPUT_POWER -10     //default output power is 100 micro-Watts.  Shouldn't cause too much harm to anything with this setting.  2nd harmonic @ 915 is nearly non-existent.  3rd show up, but very low
 </pre>
@@ -104,7 +104,7 @@ fw_setenv ack_delay_timeout 30000
 fw_setenv symbol_delay_timeout 144
 fw_setenv max_tcp_share_backoff 1728
 fw_setenv freq_rxtx_hz 915000000 
-fw_setenv sample_freq_hz 1400000 
+fw_setenv sample_freq_hz 11200000
 fw_setenv rf_bandwidth 250000 
 fw_setenv tx_output_power_minus_dbm 10
 </pre>

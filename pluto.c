@@ -205,8 +205,10 @@ struct iio_context * pluto_init_txrx() {
 void pluto_set_filter() {
   iio_device_attr_write_raw( phy, 
         "filter_fir_config", 
-        LTE1p4_MHz_ftr, 
-        LTE1p4_MHz_ftr_len);
+        //LTE1p4_MHz_ftr, 
+        //LTE1p4_MHz_ftr_len);
+        LTE20_MHz_ftr, 
+        LTE20_MHz_ftr_len );
 }
 ///////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -338,6 +340,16 @@ void pluto_set_in_sample_freq(long long sfreq) {
         sfreq); 
 
     current_sample_freq = sfreq;
+
+    iio_channel_attr_write_longlong(
+          iio_device_find_channel(rx_dev, "voltage0", false),
+          "sampling_frequency",
+          sfreq/8); //8x decimation on FPGA
+    iio_channel_attr_write_longlong(
+          iio_device_find_channel(tx_dev, "voltage0", true),
+          "sampling_frequency",
+          sfreq/8); //8x interpolation on FPGA
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -465,7 +477,7 @@ int pluto_transmit(float complex *buffer, int len, int do_dump_rx, int is_last)
         }
       }
 
-      more_data=0;
+      more_tx_data=0;
       iio_buffer_push(txbuf); //send out the last symbol to the dma
 
       while( iio_buffer_refill(rxbuf) > 0); //flush the rx buffer

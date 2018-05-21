@@ -13,6 +13,6 @@ fw_setenv ack_delay_timeout 30000
 fw_setenv symbol_delay_timeout 144
 fw_setenv max_tcp_share_backoff 1728
 fw_setenv freq_rxtx_hz 915000000 
-fw_setenv sample_freq_hz 1400000 
+fw_setenv sample_freq_hz 11200000
 fw_setenv rf_bandwidth 250000 
 fw_setenv tx_output_power_minus_dbm 10

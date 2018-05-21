@@ -54,7 +54,7 @@
 #define DEFAULT_SYMBOL_DELAY ((OFDM_M+CP_LEN+TAPER_LEN)*(DECIMATE_INTERPOLATE_FACTOR/4))
 #define DEFAULT_MAX_TCP_SHARE_BACKOFF (DEFAULT_SYMBOL_DELAY*12); 
 #define DEFAULT_TXRX_FREQ_HZ 915000000
-#define DEFAULT_SAMPLE_FREQ_HZ 1400000 
+#define DEFAULT_SAMPLE_FREQ_HZ 11200000;
 #define DEFAULT_RF_BANDWIDTH_HZ 250000 
 #define DEFAULT_TX_OUTPUT_POWER -10
 
@@ -109,15 +109,15 @@ void read_config() {
     fprintf(stderr, "\ncould not find freq_rxtx_hz key in u-boot env.  setting to default of %lld hz", freq_rxtx_hz);
   }
 
-  memset(cmd_str, 0x00, sizeof(cmd_str));
-  if( read_fw_attr_value("sample_freq_hz", cmd_str, 128) == 0) {  
-    sample_freq_hz = (long long) atoll(cmd_str);
-    fprintf(stderr, "\nsetting sample_freq_hz to %lld hz", sample_freq_hz);
-  }
-  else {
+  //memset(cmd_str, 0x00, sizeof(cmd_str));
+  //if( read_fw_attr_value("sample_freq_hz", cmd_str, 128) == 0) {  
+  //  sample_freq_hz = (long long) atoll(cmd_str);
+  //  fprintf(stderr, "\nsetting sample_freq_hz to %lld hz", sample_freq_hz);
+  //}
+  //else {
     sample_freq_hz = DEFAULT_SAMPLE_FREQ_HZ; 
     fprintf(stderr, "\ncould not find sample_freq_hz key in u-boot env.  setting to default of %lld hz", sample_freq_hz);
-  }
+  //}
 
   memset(cmd_str, 0x00, sizeof(cmd_str));
   if( read_fw_attr_value("rf_bandwidth", cmd_str, 128) == 0) {  
