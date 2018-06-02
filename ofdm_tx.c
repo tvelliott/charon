@@ -29,7 +29,7 @@
 
 #include "timers.h"
 
-#include "/usr/local/include/liquid/liquid.h"
+#include "liquid/liquid.h"
 
 #include "ofdm_conf.h"
 #include "ofdm_tx.h"

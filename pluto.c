@@ -31,7 +31,7 @@
 #include <math.h>
 #include <float.h>
   
-#include "/usr/local/include/liquid/liquid.h"
+#include "liquid/liquid.h"
 #include "filters/pluto/pluto_filters.h"
 #include "ad9361.h"
 
