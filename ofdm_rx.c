@@ -32,7 +32,7 @@
 #include <sys/time.h>
 #include <math.h>
 #include <complex.h>
-#include "/usr/local/include/liquid/liquid.h"
+#include "liquid/liquid.h"
 
 #include "pluto.h"
 #include "ofdm_conf.h"

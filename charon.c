@@ -37,7 +37,7 @@
 
 #include <getopt.h>
   
-#include "/usr/local/include/liquid/liquid.h"
+#include "liquid/liquid.h"
 
 #include "pluto.h"
 #include "ofdm_conf.h"
