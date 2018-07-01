@@ -235,6 +235,11 @@ up to QAM-256 with much higher-order FEC was tested.
 Use the CFO estimate (nco_crcf_get_frequency) of the OFDM preamble to tune the XO correction. (as per suggestion from tfcollins).
 <BR>
 <BR>
+Calibrate the XO with a tone at a known frequency (https://github.com/analogdevicesinc/plutosdr_scripts/blob/master/cal_ad9361.c).
+Use the BIST tones on one Pluto to calibrate against (similar to https://github.com/analogdevicesinc/rfsom-box-gui/blob/master/bin/send_tone.sh).
+(as per suggestion from tfcollins).
+<BR>
+<BR>
 <B>For fun....</B>
 <BR>
 <BR>
