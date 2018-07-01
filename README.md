@@ -232,6 +232,9 @@ does not result in higher data throughput than QAM-16.  When doing loopback test
 up to QAM-256 with much higher-order FEC was tested.
 <BR>
 <BR>
+Use the CFO estimate (nco_crcf_get_frequency) of the OFDM preamble to tune the XO correction. (as per suggestion from tfcollins).
+<BR>
+<BR>
 <B>For fun....</B>
 <BR>
 <BR>
