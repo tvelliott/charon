@@ -27,7 +27,7 @@ environment variable (via fw_setenv enable_charon) if normal Pluto SDR
 functionality is desired (e.g. using GQRX, GNU-Radio, etc).
 </p>
 <BR>
-<B>Plot of 3rd radio monitoring the on-air spectrum and constellation of 2 transceivers communicating via OFDM-64, QAM-16</B>
+<B>Plot of 3rd radio monitoring the on-air spectrum and constellation of 2 transceivers communicating via OFDM-64, QAM-16.  Note: the slightly higher emissions on the right side of the plot are not from the Pluto transceivers in the network, but from other wireless systems in the local area</B>
 <img src="https://github.com/tvelliott/charon/blob/master/images/charon_receive_plot.gif">
 <BR>
 <B>Installation</B>
